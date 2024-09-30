@@ -24,40 +24,40 @@ Certifique-se de ter o **Docker** e o **Docker Compose** instalados na sua máqu
 
 No diretório raiz do projeto, basta rodar o comando abaixo para construir e iniciar os containers necessários:
 
-\`\`\`bash
+```bash
 make api
-\`\`\`
+```
 
 Isso irá subir a aplicação, juntamente com todos os serviços necessários, como o Redis.
 
-A API estará disponível em: \`http://localhost:8008\`.
+A API estará disponível em: `http://localhost:8008`.
 
 ### 3. Autenticação
 
 Para testar as rotas protegidas da API, você precisará utilizar o seguinte usuário e senha para autenticação:
 
-- **Usuário**: \`user_1\`
-- **Senha**: \`senha123\`
+- **Usuário**: `user_1`
+- **Senha**: `senha123`
 
 
 ## Testando a API
 
 Você pode testar a API utilizando ferramentas como o **Postman** ou **cURL**. Abaixo está um exemplo de como realizar uma chamada autenticada:
 
-\`\`\`bash
+```bash
 curl --location 'http://localhost:8008/coin_infos' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Basic dXNlcl8xOnNlbmhhMTIz' \
 --data '{
     "symbol": "BTC"
   }'
-\`\`\`
+```
 
 ### Estrutura do Projeto
 
 O projeto está organizado da seguinte forma:
 
-\`\`\`
+```
 /src
   /domain      # Contém as entidades e regras de negócio
   /ports       # Contém as interfaces que definem como as camadas externas interagem com o núcleo
@@ -65,4 +65,4 @@ O projeto está organizado da seguinte forma:
 Dockerfile     # Definição da imagem Docker
 docker-compose.yml  # Arquivo de configuração do Docker Compose
 Makefile       # Arquivo Makefile para automatização de tarefas
-\`\`\`
+```
