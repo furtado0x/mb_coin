@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "coin-api"
+version = "0.1.0"
+description = "API to fetch coin prices"
+authors = ["Fernando Lima"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+httpx = "^0.27.2"
+fastapi = "^0.115.0"
+uvicorn = "^0.30.6"
+passlib = "^1.7.4"
+aiocache = {extras = ["redis"], version = "^0.12.3"}
+pydantic-settings = "^2.5.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
