@@ -5,7 +5,7 @@ FROM python:3.11-slim
 ENV POETRY_VERSION=1.6.1 \
     POETRY_HOME="/opt/poetry" \
     POETRY_NO_INTERACTION=1 \
-    POETRY_VIRTUALENVS_IN_PROJECT=true \
+    POETRY_VIRTUALENVS_CREATE=false \
     PATH="$POETRY_HOME/bin:$PATH" \
     PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
@@ -26,7 +26,7 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock ./
 
 # Instalar as dependências do projeto usando o Poetry
-RUN poetry install
+RUN poetry install --no-root
 
 # Copiar o código-fonte da aplicação
 COPY . .
